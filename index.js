@@ -15,6 +15,8 @@ const http = require("http").Server(app);
 const socketIO = require("socket.io")(http);
 
 // Connect to MongoDB
+mongoose.set("strictQuery", false);
+mongoose.Promise = global.Promise;
 mongoose
   .connect(process.env.URI_DB, {
     useNewUrlParser: true,
@@ -40,11 +42,7 @@ app.use(
  
   })
 );
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+
  
 
  

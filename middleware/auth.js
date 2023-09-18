@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const TOKEN_KEY = "random";
+const TOKEN_KEY = "trancongtien";
 
 function generateAccessToken(userModel) {
   return jwt.sign({ data: userModel }, TOKEN_KEY, {

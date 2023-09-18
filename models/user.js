@@ -25,8 +25,7 @@ const UserSchema = new mongoose.Schema(
       address: String,
     },
     avartar: {
-      public_id: String,
-      url: String,
+      type: String,
     },
   },
   {
